@@ -9,7 +9,7 @@ close all
 FileID = fopen ('Results.txt' , 'a') ;
 
 %% Source distributions
-sigma = 1 ; % the standard devision of the sources
+sigma = 1 ; % the standard devision of the source
 u = 0 ; % the source's mean value
 alpha = 300000  ; % the size of the training set to find the initial codebook using the splitting algorithm
 
@@ -60,7 +60,7 @@ for delta = [ 0 5 10]
         end
         
         % The first step of the ACOSQ described in Section 4.1 and
-        % Algorithm 4. In this step a 1-bit COSQ is designed for the source pdf f as computed in line 41.
+        % Algorithm 4. In this step a 2-bit COSQ is designed for the source pdf f as computed in line 41.
         [SDR_2(k) ,  D_2 , T , codebook] = COSQ_2(Pr , f , T(: , 1) ,  codebook , delta_u) ;
         
         % save the codebook to initialize the system with the next value of
